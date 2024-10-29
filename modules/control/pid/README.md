@@ -27,27 +27,31 @@ A PID is made of three basic blocks whose outputs are:
 - The integral of the input
 - The derivative of the input
 
-Figure 1 shows the block diagram of a generic system controlled by a PID controller. The goal of the PID block is to generate an output u(t) that drives the system at hand (the “PLANT”) so that its output [y(t) or PV, Process Value] matches a reference signal [x(t) or SP, Set Point]. The input to the PID is the error between the reference signal (ideal or desired behavior of the PLANT) and the real output behavior. The target is to get the error as close to zero as possible.
+<img alt="PID controller block diagram" src="https://upload.wikimedia.org/wikipedia/commons/4/43/PID_en.svg" />
 
-**Figure 1:** A generic system controlled by PID
+**Figure 1:** Block diagram of a generic system controlled by a PID controller. The goal of the PID block is to generate an output u(t) that drives the system at hand (the “PLANT”) so that its output [y(t) or PV, Process Value] matches a reference signal [x(t) or SP, Set Point]. The input to the PID is the error between the reference signal (ideal or desired behavior of the PLANT) and the real output behavior. The target is to get the error as close to zero as possible.
+
 
 The equation that describes the PID controller behavior in the continuous time domain is shown in Equation 1.
 
-**Equation 1**
+<img alt="analytical equation for PID output" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4037a97c29467502e1dc6b4ed81d561b661a2eb1" />
 
 ### Digital
 
 Transform Equation 1 into the discrete time domain to get Equation 2.
 
-\[ u(n) = Kp \cdot e(n) + Ki \cdot \sum_{j=1}^{n} e(j) + Kd \cdot (e(n) - e(n-1)) \]
+$ u(n) = Kp \cdot e(n) + Ki \cdot \sum_{j=1}^{n} e(j) + Kd \cdot (e(n) - e(n-1)) $
 
 **Equation 2**
 
 From Equation 2, we can construct the algorithm's block diagram shown in Figure 2.
 
+<img alt="Digital PID controller algorithm block diagram" src="docs/block-diagram.png" />
+
 **Figure 2:** Digital PID controller algorithm
 
 ## Architecture
+<img alt="Core Architecture" src="docs/arch.png"/>
 
 **Figure 3:** Block diagram of the core's architecture. The blue blocks are combinational logic, the orange blocks are sequential logic, the yellow blocks are registers, and the purple ones are interfaces.
 
@@ -60,6 +64,9 @@ Coefficients (Kp, Ki, Kd, SP) and measured process value (PV), which are all 16-
 ### Calculation of u(n)
 
 The final result u(n) is a 32-bit signed number in two's complement. Calculation of u(n) will be triggered every time PV is updated. The calculation procedure is demonstrated in Figure 4.
+
+<img alt="Calculation procedure of u(n). Sum and product are wire type signals" src="docs/mul_add_clk.png"/>
+
 
 **Figure 4:** Calculation procedure of u(n). Sum and product are wire type signals.
 
