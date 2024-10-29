@@ -1,4 +1,4 @@
-## Introduction
+# Single Variable PID Controller
 
 The PID controller IP core performs a digital proportional–integral–derivative controller (PID controller) algorithm. The algorithm first calculates the error between a measured value (PV) and its ideal value (SP), then uses the error as an argument to calculate the manipulated value (MV). The MV will adjust the process to minimize the error. It can be used to calculate the duty cycle for PWM (Pulse Width Modulation).
 
