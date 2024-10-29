@@ -1,0 +1,27 @@
+{
+  "default_target": "pid_testbench",
+  "build_targets": [
+    {
+      "id": "pid_default",
+      "name": "Single Variable 16-bit PID",
+      "include_targets": [],
+      "sources": [
+        "RTL/16x16bit_multiplier_pipelined.v",
+        "RTL/booth.v",
+        "RTL/CLA_fixed.v",
+        "RTL/PID.v",
+        "RTL/PID_defines.v"
+      ]
+    },
+    {
+      "id": "pid_testbench",
+      "name": "Bundled testbenches for PID",
+      "include_targets": ["pid_default"],
+      "sources": [
+        "bench/PID_tb.v",
+        "bench/timescale.v",
+        "bench/wb_master.v"
+      ]
+    }
+  ]
+}
