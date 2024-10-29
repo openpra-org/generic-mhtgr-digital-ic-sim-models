@@ -67,6 +67,16 @@ The final result u(n) is a 32-bit signed number in two's complement. Calculation
 
 <img alt="Calculation procedure of u(n). Sum and product are wire type signals" src="docs/mul_add_clk.png"/>
 
+|               |        |               |                   |                    |                   |   |   |
+|---------------|--------|---------------|-------------------|--------------------|-------------------|---|---|
+| 1st Stage     |        | md=Sum, mr=Ki | md=err(0), mr=Kpd | md=err(1), mr=Kd   |                   |   |   |
+| 2nd Stage     |        |               | product=err(0)*Ki | product=err(0)*Kpd | product=err(1)*Kd |   |   |
+|               |        |               |                   |                    |                   |   |   |
+|               |        |               |                   |                    |                   |   |   |
+|               |        |               |                   |                    |                   |   |   |
+
+
+
 
 **Figure 4:** Calculation procedure of u(n). Sum and product are wire type signals.
 
