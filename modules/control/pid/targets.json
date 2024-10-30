@@ -1,5 +1,6 @@
 {
   "default_target": "pid_testbench",
+  "base_path": "modules/control/pid",
   "build_targets": [
     {
       "id": "pid_default",

@@ -1,0 +1,6 @@
+include LICENSE
+include README.md
+recursive-include modules simulations *
+prune tests/
+exclude *.ipynb
+exclude notebooks/
