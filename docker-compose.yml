@@ -1,0 +1,6 @@
+
+
+services:
+  simulator:
+    build: .
+    command: ["python3", "__main__.py"]

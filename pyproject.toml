@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mhtgr-ic"
+description = "Digital I&C verilog simulation models for the generic MHTGR PRA model"
+version = "0.0.1"
+readme.content-type = "text/markdown"
+readme.file = "README.md"
+authors = [
+    { name = "Arjun Earthperson", email = "mail@earthperson.org" },
+    { name = "Priyanka Pandit", email = "ppandit@ncsu.edu" },
+
+]
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Utilities",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering",
+    "Typing :: Typed"
+]
+dependencies = [
+    "antlr4-python3-runtime",
+    "argparse",
+    "flatbuffers >=24",
+    "jsonschema",
+    "lxml",
+    "networkx",
+    "pandas"
+]
+
+[project.urls]
+Repository = "https://github.com/openpra-org/generic-mhtgr-digital-ic-sim-models"
+Documentation = "https://docs.openpra.org"
+Tracker = "https://youtrack.openpra.org"
+Homepage = "https://openpra.org"
+
+[project.optional-dependencies]
+default = []
+dev = [
+    "autopep8",
+    "build",
+    "pyarrow",
+    "pytest",
+    "pytest-cov",
+    "pylint",
+    "pylint[spelling]",
+    "ruff",
+    "twine"
+]
+static-analysis = [
+    "autopep8",
+    "ruff"
+]
+test = [
+    "pytest",
+    "pytest-cov",
+    "ruff"
+]
+
+[project.scripts]
+
+[tool.pytest.ini_options]
+addopts = "-ra -v --strict-markers"
+testpaths = [
+    "tests"
+]
+
+[tool.setuptools]
+packages = ["mhtgr-ic"]
+

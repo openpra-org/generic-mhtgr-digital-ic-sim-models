@@ -3,6 +3,18 @@ Digital Instrumentation &amp; Control (I&amp;C) simulations used in the generic 
 
 ## Install
 
+1. Install Docker
+
+With Docker installed, git clone this repo and run:
+```bash
+docker build --tag=mhtgr:latest .
+```
+
+2. Run the container
+```shell
+ docker run --rm -it mhtgr:latest /bin/bash python
+```
+
 ### on macOS
 ```zsh
 brew install icarus-verilog
