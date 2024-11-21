@@ -7,22 +7,22 @@
       "include_targets": [],
       "working_dir": "modules/control/pid/RTL",
       "sources": [
-        "PID_defines.v",
-        "16x16bit_multiplier_pipelined.v",
-        "booth.v",
-        "CLA_fixed.v",
-        "PID.v"
+        "RTL/PID_defines.v",
+        "RTL/16x16bit_multiplier_pipelined.v",
+        "RTL/booth.v",
+        "RTL/CLA_fixed.v",
+        "RTL/PID.v"
       ]
     },
     {
       "id": "pid_testbench",
       "name": "Bundled testbenches for PID",
       "include_targets": ["pid_default"],
-      "working_dir": "modules/control/pid/bench",
+      "working_dir": "modules/control/pid",
       "sources": [
-        "PID_tb.v",
-        "timescale.v",
-        "wb_master.v"
+        "bench/PID_tb.v",
+        "bench/timescale.v",
+        "bench/wb_master.v"
       ]
     }
   ]

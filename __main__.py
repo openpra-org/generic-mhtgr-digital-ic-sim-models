@@ -57,7 +57,8 @@ def main():
 
     # Run the iverilog command in the specified working directory
     try:
-        print('Running iverilog...')
+        print("In working dir...", working_dir)
+        print('Running iverilog...', iverilog_cmd)
         subprocess.check_call(iverilog_cmd, cwd=working_dir)
     except subprocess.CalledProcessError as e:
         print('Error running iverilog.')
@@ -76,12 +77,13 @@ def main():
     vcd_file = os.path.join(working_dir, f'{target_id}.vcd')
     if os.path.exists(vcd_file):
         system_name = platform.system()
-        if system_name == 'Darwin':
-            # macOS
-            open_cmd = ['open', '-a', 'Scansion', vcd_file]
-        else:
-            # Assume Linux or Windows has gtkwave installed
-            open_cmd = ['gtkwave', vcd_file]
+        open_cmd = ['gtkwave', vcd_file]
+        # if system_name == 'Darwin':
+        #     # macOS
+        #     open_cmd = ['open', '-a', 'Scansion', vcd_file]
+        # else:
+        #     # Assume Linux or Windows has gtkwave installed
+        #     open_cmd = ['gtkwave', vcd_file]
         try:
             print('Opening waveform...')
             subprocess.Popen(open_cmd)

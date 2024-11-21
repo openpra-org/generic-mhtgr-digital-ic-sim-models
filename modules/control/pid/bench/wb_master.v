@@ -1,4 +1,4 @@
-`include "timescale.v"
+`include "bench/timescale.v"
 
 //                              -*- Mode: Verilog -*-
 // Filename        : wb_master.v

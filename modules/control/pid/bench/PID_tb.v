@@ -200,7 +200,6 @@ initial begin
 		rdata_1=rdata_1>>>8;
 		wb_master_0.wr(4*4,rdata_1,4'b1111);
 		update_sb(4*4,rdata_1[15:0]);
-		
 	end
 	#10 $finish;
 end

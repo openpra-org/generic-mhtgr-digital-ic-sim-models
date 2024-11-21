@@ -33,7 +33,7 @@ of[4]==1	:	sigma overflow
 
 */
 
-`include "PID_defines.v"
+`include "RTL/PID_defines.v"
 
 module	PID #(
 `ifdef wb_16bit
