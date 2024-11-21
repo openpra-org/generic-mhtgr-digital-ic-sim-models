@@ -12,7 +12,7 @@ docker build --tag=mhtgr:latest .
 
 2. Run the container
 ```shell
- docker run --rm -it mhtgr:latest /bin/bash python
+ docker run --rm -it mhtgr:latest __main__.py
 ```
 
 ### on macOS
