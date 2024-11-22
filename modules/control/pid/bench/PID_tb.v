@@ -12,6 +12,8 @@ always #1 clk=~clk;
 
 initial begin
 	#10 rst=0;
+	$dumpfile("outputs/pid_testbench.vcd");
+    $dumpvars(0, PID_tb);
 end
 
 //scoreboard

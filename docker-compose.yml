@@ -3,4 +3,8 @@
 services:
   simulator:
     build: .
-    command: ["python3", "__main__.py"]
+    command: ["__main__.py"]
+    volumes:
+      - ./outputs:/app/modules/control/pid/outputs
+      - ./modules:/app/modules
+      - ./simulation:/app/simulation

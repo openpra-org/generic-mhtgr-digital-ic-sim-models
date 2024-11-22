@@ -3,7 +3,7 @@ FROM python:3.12 AS build
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-ARG BUILD_PACKAGES="iverilog gtkwave"
+ARG BUILD_PACKAGES="iverilog gtkwave mesa-utils"
 
 SHELL ["/bin/bash", "-c"]
 RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \

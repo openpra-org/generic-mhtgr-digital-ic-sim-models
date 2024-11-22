@@ -6,6 +6,7 @@
       "name": "Single Variable 16-bit PID",
       "include_targets": [],
       "working_dir": "modules/control/pid/RTL",
+      "outputs_dir": "outputs",
       "sources": [
         "RTL/PID_defines.v",
         "RTL/16x16bit_multiplier_pipelined.v",
@@ -19,6 +20,7 @@
       "name": "Bundled testbenches for PID",
       "include_targets": ["pid_default"],
       "working_dir": "modules/control/pid",
+      "outputs_dir": "outputs",
       "sources": [
         "bench/PID_tb.v",
         "bench/timescale.v",
